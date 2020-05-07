@@ -3,6 +3,9 @@
 # libraries
 import time
 import RPi.GPIO as GPIO
+
+# Desavilitamos los warnings
+GPIO.setwarnings(False)
 # Use BCM GPIO references
 # Instead of physical pin numbers
 GPIO.setmode(GPIO.BCM)
@@ -10,12 +13,12 @@ GPIO.setmode(GPIO.BCM)
 StepPins = [24,25,8,7]
 # Set all pins as output
 for pin in StepPins:
-	print "Setup pins"
+	#print ("Setup pins")
 	GPIO.setup(pin,GPIO.OUT)
-	GPIO.output(pin, False)
+	GPIO.output(pin, 0) #False)
 	pass
 # Define some settings
-WaitTime = 0.05
+WaitTime = 0.001
 # Define simple sequence
 StepCount1 = 4
 Seq1 = []
@@ -69,7 +72,7 @@ def steps(nb):
 		time.sleep(WaitTime)
 
 # Start main loop
-nbStepsPerRev=2048
+nbStepsPerRev=760 #Pasos necesarios para dar una vuelta
 hasRun=False
 while not hasRun:
 	steps(nbStepsPerRev)# parcourt un tour dans le sens horaire
@@ -77,7 +80,7 @@ while not hasRun:
 	steps(-nbStepsPerRev)# parcourt un tour dans le sens anti-horaire
 	time.sleep(1)
 	hasRun=True
-	print "Stop motor"
+	print ("Stop motor")
 	for pin in StepPins:
 		GPIO.output(pin, False)
 		pass
