@@ -37,7 +37,7 @@ Seq2[5] = [0,0,1,1]
 Seq2[6] = [0,0,0,1]
 Seq2[7] = [1,0,0,1]
 # Choose a sequence to use
-Seq = Seq2
+Seq = Seq2[]
 StepCount = StepCount2
 def steps(nb):
 	StepCounter = 0
@@ -55,18 +55,18 @@ def steps(nb):
 				StepCounter += sign
 				# If we reach the end of the sequence
 				pass
+			# start again
+			if (StepCounter==StepCount):
+				StepCounter = 0
+				pass
+			if (StepCounter<0):
+				StepCounter = StepCount-1
+				pass
 			pass
-		pass
-	# start again
-	if (StepCounter==StepCount):
-		StepCounter = 0
-		if (StepCounter<0):
-			StepCounter = StepCount-1
-			pass
-		pass
-	# Wait before moving on
-	time.sleep(WaitTime)
-	# Start main loop
+		# Wait before moving on
+		time.sleep(WaitTime)
+
+# Start main loop
 nbStepsPerRev=2048
 hasRun=False
 while not hasRun:
