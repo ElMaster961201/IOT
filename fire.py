@@ -7,20 +7,27 @@ data = {
 }
 
 # Envio de informacion.
+# Crea  una referencia tipo objeto.
 #result = firebase.post('/user',data)
+
+# Envia informacion.
+# Tal y cual como aparece despues de la ruta.
+firebase.put('/user','2',data)
+
+# Elimina el objeto
+# firebase.delete('/user','-M6kB5sxDF8FUQSvfNv3')
 
 # print (result)
 #Descarga de informacion.
-result = firebase.get('/user',None)
+result = firebase.get('/user', None)[1:]
 
-re = result.values()
-
-for r in re:
-	sr = r.items()
-	for k,v in sr:
-		print (k,"   ",v)
+for r in result:
+	print ()
+	print(r)
+	for v,k in r.items():
+		print (v, "    ", k)
 		pass
-	print()
+	pass
 
 #print(result['-M6kB5sxDF8FUQSvfNv3'])
 #print (result[list(result.keys())])
