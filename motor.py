@@ -48,6 +48,10 @@ def steps(nb):
 	for i in range(nb):
 		for pin in range(4):
 			xpin = StepPins[pin]
+			print
+			print "Pin", pin,"StepCounter",StepCounter
+			print "len",len(Seq)
+			print "len[]",len(Seq[StepCounter])
 			if Seq[StepCounter][pin]!=0:
 				GPIO.output(xpin, True)
 			else:
