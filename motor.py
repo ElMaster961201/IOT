@@ -15,7 +15,7 @@ for pin in StepPins:
 	GPIO.output(pin, False)
 	pass
 # Define some settings
-WaitTime = 0.005
+WaitTime = 0.05
 # Define simple sequence
 StepCount1 = 4
 Seq1 = []
@@ -37,7 +37,7 @@ Seq2[5] = [0,0,1,1]
 Seq2[6] = [0,0,0,1]
 Seq2[7] = [1,0,0,1]
 # Choose a sequence to use
-Seq = Seq2[]
+Seq = Seq2
 StepCount = StepCount2
 def steps(nb):
 	StepCounter = 0
@@ -48,15 +48,13 @@ def steps(nb):
 	for i in range(nb):
 		for pin in range(4):
 			xpin = StepPins[pin]
-			print
-			print "Pin", pin,"StepCounter",StepCounter
-			print "len",len(Seq)
-			print "len[]",len(Seq[StepCounter])
 			if Seq[StepCounter][pin]!=0:
 				GPIO.output(xpin, True)
+				time.sleep(WaitTime)
 			else:
 				GPIO.output(xpin, False)
 				StepCounter += sign
+				time.sleep(WaitTime)
 				# If we reach the end of the sequence
 				pass
 			# start again
