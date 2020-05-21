@@ -85,3 +85,6 @@ while not hasRun:
 		GPIO.output(pin, False)
 		pass
 	pass
+finally:
+    # Reiniciar todos los canales de GPIO.
+    GPIO.cleanup()
