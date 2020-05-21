@@ -5,7 +5,7 @@ import time
 import RPi.GPIO as GPIO
 
 # Desavilitamos los warnings
-GPIO.setwarnings(False)
+# GPIO.setwarnings(False)
 # Use BCM GPIO references
 # Instead of physical pin numbers
 GPIO.setmode(GPIO.BCM)
@@ -85,6 +85,7 @@ while not hasRun:
 		GPIO.output(pin, False)
 		pass
 	pass
+
 finally:
     # Reiniciar todos los canales de GPIO.
     GPIO.cleanup()
