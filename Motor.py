@@ -161,7 +161,8 @@ if __name__ == "__main__":
 			pass
 
 		# Start main loop
-		nbStepsPerRev=760 #Pasos necesarios para dar una vuelta
+		## nbStepsPerRev=760 #Pasos necesarios para dar una vuelta
+		nbStepsPerRev=120 #Pasos necesarios para dar 1/6 una vuelta
 		hasRun=False
 		while not hasRun:
 			steps(nbStepsPerRev)# parcourt un tour dans le sens horaire
