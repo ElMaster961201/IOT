@@ -1,0 +1,36 @@
+{
+  "paco-chihuahua-pequenno" : {
+    "Nombre" : "Paco",
+    "Raza" : "Chihuahua",
+    "Horarios" : {
+      "1" : "8:00",
+      "2" : "14:00",
+      "3" : "18:00",
+      "4" : "23:00" 
+    },
+    "Cantidadcomida" : "100",
+    "Tamanno" : "Pequenno",
+    "Especie" : "Gato",
+    "ComidaResipiente" : "94"
+
+  },
+  "marco-pitbull-mediano" : {
+    "Nombre" : "Marco",
+    "Raza" : "Pitbull",
+    "Horarios" : {
+      "1" : "8:00",
+      "2" : "14:00",
+      "3" : "18:00",
+      "4" : "23:45" 
+    },
+    "Cantidadcomida" : "150",
+    "Tamanno" : "mediano",
+    "Especie" : "Perro",
+    "ComidaResipiente" : "34"
+  }
+}
+
+
+
+
+ 
