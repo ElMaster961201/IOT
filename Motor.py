@@ -12,8 +12,6 @@ class Motor(object):
 		# Define GPIO signals to use Pins 18,22,24,26 GPIO24,GPIO25,GPIO8,GPIO7
 		self.StepPins = [24,25,8,7]
 
-		self.nbStepsPerRev=760 #Pasos necesarios para dar una vuelta
-
 		# Set all pins as output
 		for pin in self.StepPins:
 			#print ("Setup pins")
@@ -44,8 +42,7 @@ class Motor(object):
 		self.Seq = self.Seq2
 		pass
 
-	def steps(self):
-		nb = self.nbStepsPerRev
+	def steps(self, nb = 120):
 		StepCounter = 0
 		if nb<0: 
 			sign=-1
